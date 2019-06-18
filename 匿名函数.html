@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		var arr=["one","two","three"];
+		for(var i=0;i<arr.length;i++) {
+		   (function(index){
+			setTimeout(function(){
+			  console.log(arr[index]);
+				}, index*1000)
+			})(i)
+		}
+		</script>
+	</body>
+</html>

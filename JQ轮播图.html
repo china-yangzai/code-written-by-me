@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.css"/>
+	</head>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		.hello{
+			width: 800px;
+			height: 600px;
+			margin: 100px auto;
+			position: relative;
+		}
+		.hello img{
+			width:800px;
+			position: absolute;
+			height:600px;
+			display: none;
+		}
+		.hello img:first-child {
+			display: block;
+		}
+		.arrow{
+			position:relative;
+		}
+		.left,.right{
+			width: 100px;
+			height: 200px;
+			position: absolute;
+			z-index: 2;
+			top:200px;
+			background: #ccc;
+			display: flex;
+			opacity: .4;
+			-moz-opacity:0.4;
+			-khtml-opacity: 0.4;
+			opacity: 0.4;
+			filter:alpha(opacity=40);
+			cursor: pointer;
+		}
+		.left{
+			left:0
+		}
+		.right{
+			right: 0;
+		}
+		.glyphicon{
+			flex: 1;
+			align-items: center;
+			text-align: center;
+			color:#000000;
+			font-size:26px;
+			height: 200px;
+			line-height: 200px;
+		}
+		.pagnition{
+			position: absolute;
+			width: 300px;
+			bottom: 20px;
+			height: 40px;
+			left:50%;
+			transform: translate(-50%);
+		}
+		.pagnition li{
+			cursor: pointer;
+			background: #ccc;
+			text-align: center;
+			width: 40px;
+			float: left;
+			margin-right: 20px;
+		}
+		.pagnition .active{
+			background: red;
+		}
+	</style>
+	<script src="js/jquery3.3.1.js"></script>
+	<script src="js/banner.js"></script>
+	<body>
+		<section class="hello">
+			<div>
+				<img src="img/IMG_0187.JPG" alt="" />
+				<img src="img/IMG_0188.JPG" alt="" />
+				<img src="img/IMG_0189.JPG" alt="" />
+				<img src="img/IMG_0191.JPG" alt="" />
+				<img src="img/IMG_0193.JPG" alt="" />
+			</div>
+			<div class="arrow">
+				<div class="left">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</div>
+				<div class="right">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</div>
+			</div>
+			<ol class="pagnition">
+				<li class="active">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>
+		</section>
+		<script>
+			$(function(){
+				$('ol li').pagination();
+				$('.arrow').horizon();
+			})
+		</script>
+	</body>
+</html>

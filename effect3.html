@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/rest.css" />
+		<style>
+			.wrap{
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000;
+				margin: 10px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			.box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: -1px;
+				top: -1px;
+			}
+			.wrap p{
+				width:100px;
+				height: 100px;
+				line-height: 100px;
+				color:red;
+				z-index:10;
+				text-align: center;
+				font-size: 50px;
+				float: left;
+			}
+			/*p:nth-child(even){
+				margin:0px 100px 100px 0;
+			}*/
+			/*p:nth-child(2){
+				left:15px;
+				top:15px;
+			}
+			p:nth-child(3){
+				right:15px;
+				top:15px;
+				/*text-indent: 70px;
+			}
+			p:nth-child(4){
+				left:15px;
+				bottom:15px;
+			}
+			p:nth-child(5){
+				right:15px;
+				bottom:15px;
+				/*text-indent: 70px;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div class="wrap clearfix">
+			<div class="box"></div>
+			<p class="text">勇</p>
+			<p class="text">闯</p>
+			<p class="text">仨</p>
+			<p class="text">国</p>
+			<p>勇</p>
+			<p>闯</p>
+			<p>仨</p>
+			<p>国</p>
+		</div>
+		<button id="btn">pause</button>
+		<button id="btn2">run</button>
+		<button id="reset">reset</button>
+		<script>
+			(function(){
+				var timer=null;
+      			var btn1=document.getElementById("btn1");
+            	var div1=document.getElementsByClassName("box")[0];
+            	var oBox = document.getElementsByClassName("box")[0];
+				var oBtn = document.getElementById("btn");
+				var oRun = document.getElementById("btn2");
+				var oReset = document.getElementById("reset");
+				var aPs = document.getElementsByTagName("p");
+              	clearInterval(timer);//如果多次点击，那么会有多个定时器同时工作，移动速度不是设置的10,会有叠加效果，故应该清除
+              	function animate(){
+              		timer= setInterval(function () {
+                if(div1.offsetLeft >= -1 && div1.offsetLeft < 99 && div1.offsetTop == -1){
+                	div1.style.top=-1;
+                  	div1.style.left=div1.offsetLeft + 10 +'px';
+                  	if(div1.offsetLeft >= -1 && div1.offsetLeft < 49.5){
+                	aPs[0].style.color = 'white';
+                  	}
+                	else{
+                	aPs[0].style.color = 'red';	
+                	}
+                }
+                  else if(div1.offsetLeft >= 99 && div1.offsetTop < 99){
+                  	div1.style.left=100;
+                  	div1.style.top=div1.offsetTop + 10 +'px';
+                  	if(div1.offsetLeft >= 100 && div1.offsetTop < 50){
+                  		aPs[1].style.color = 'white';
+                  	}else{
+                  		aPs[1].style.color = 'red';
+                  	}
+                  }else if(div1.offsetTop >= 100 && div1.offsetLeft >= 10 ){
+                  	div1.style.top=100;
+                  	div1.style.left=div1.offsetLeft - 10 +'px';
+                  	if(div1.offsetTop >= 100 && div1.offsetLeft > 50){
+                  		aPs[2].style.color = 'white';
+                  	}else{
+                  		aPs[2].style.color = 'red';
+                  	}
+                  }else if(div1.offsetLeft < 10 && div1.offsetTop > 0){
+                  	div1.style.left=0;
+                  	div1.style.top=div1.offsetTop - 10 +'px';
+                  	if(div1.offsetLeft < 10 && div1.offsetTop > 50){
+                  		aPs[3].style.color = 'white';
+                  	}else{
+                  		aPs[3].style.color = 'red';
+                  	}
+                  	
+                  }
+              },400);
+              oRun.setAttribute("disabled","true")
+          	}
+              	animate();
+         	
+			oBtn.onclick = function (ev) {
+				clearInterval(timer);
+				oRun.removeAttribute("disabled")
+			}
+			oRun.onclick = function (){
+                animate();
+				oReset.removeAttribute('disabled')
+			}
+			oReset.onclick = function (){
+				clearInterval(timer);
+				oReset.setAttribute("disabled","true");
+				oRun.removeAttribute("disabled")
+			}
+        	})()
+			
+		</script>
+	</body>
+</html>
+
+

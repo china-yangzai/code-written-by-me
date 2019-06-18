@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var arr = ['a','b','c','d','e'];
+			for (var i of arr) { // 只能循环带有遍历接口的数据 json是不能循环
+				console.log(i)
+			};
+			for(var j in arr){
+				console.log(j) //在数组里遍历的是下标
+			}
+			arr.forEach(function(item,index){
+				console.log(item + "=>" + index)
+			})
+			var obj = {
+				'name': 'web02',
+				'age': 20
+			};
+			//obj没有提供一个循环的接口，所以无法调用for of循环方法
+			/*for (var val of obj) {
+				console.log(val)  //无法调用
+			};*/
+			for(var val of obj.name){
+				console.log(val)   //遍历了web02这个字符串
+			}
+			for(var value in obj){
+				console.log(value)
+				console.log(obj[value])
+			}
+		</script>
+	</body>
+</html>
+

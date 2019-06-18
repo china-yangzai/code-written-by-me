@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		if(div1.offsetLeft == 0 && div1.offsetTop == 0){
+                  	div1.style.top=0;
+                  	div1.style.left=div1.offsetLeft + 10 +'px';
+                  }
+                  else if(div1.offsetLeft == 300 && div1.offsetTop == 0){
+                  	div1.style.left=300;
+                  	div1.style.top=div1.offsetTop + 10 +'px';
+                  }else if(div1.offsetLeft == 300 && div1.offsetTop == 300){
+                  	div1.style.top=300;
+                  	div1.style.left=div1.offsetLeft - 10 +'px';
+                  }else if(div1.offsetLeft == 0 && div1.offsetTop == 300){
+                  	div1.style.left=0;
+                  	div1.style.top=div1.offsetTop - 10 +'px';
+                  }
+              },10);
+	</body>
+</html>

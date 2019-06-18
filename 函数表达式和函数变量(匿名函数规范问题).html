@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			add(1,2) //无弹窗，报错： add is not a function 它是函数表达式  
+			var add = function(x,y){ //函数的声明
+			    alert(x+y)  
+			}
+			/*匿名函数自执行*/
+			(function () { /* code */ } ()) // 推荐使用这个
+			(function(){  /*这里是块级作用域*/  })();// 这个也可用
+		1.函数表达式和函数声明的区别在于，函数表达式在使用前必须先赋值。所以这段代码执行的时候就会出错：
+		2.造成这种现象是因为解析器在向执行环境中加载数据时，解析器会率先读取函数声明，并使其在执行任何代码前可用；
+		3.至于函数表达式，则必须等到解析器执行到它的所在的的代码行，才会真正的被解析。
+		4.函数表达式中，创建的函数叫做匿名函数，因为function关键字后面没有标识符。
+		传参见 "匿名函数".html;
+		</script>
+		link:https://blog.csdn.net/sinat_17775997/article/details/80263581
+	</body>
+</html>

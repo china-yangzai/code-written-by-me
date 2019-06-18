@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<head>
+	    <style>
+	    	*{
+	    		padding: 0;
+	    		margin: 0;
+	    	}
+		.container {
+		    padding: 0 200px;
+		    overflow:hidden;
+		    zoom:1;
+		    position: relative; /* 相对定位 */
+		}
+		
+		.container .left {
+		     width: 200px;
+		    height: 300px;
+		    background: #ff8d66;
+		    position: absolute; 
+		    left:0;
+		}
+		
+		.container .right {
+		    width: 200px;
+		    height: 300px;
+		    background: #7ffe8b;
+		    position: absolute; 
+		    right: 0;
+		}
+		
+		.container .main {
+		    width: 100%;
+		    height: 300px;
+		    background-color:#fcf187;
+		    position: relative;
+		    float:left;
+		}
+	    </style>
+	</head>
+	<body>
+	    <div class="container">
+		    <div class="main">
+		        <h2>圣杯布局主内容区</h2>
+		    </div>
+		    <div class="left">左边栏内容区</div>
+		    <div class="right">右边栏内容区</div>
+		   	原理： 利用浮动情况下，负边界值会导致div上移
+		</div>
+	</body>
+</html>
+
+

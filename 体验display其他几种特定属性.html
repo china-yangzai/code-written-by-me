@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			section{
+				width: 1600px;
+				display: flex;
+				margin: 0 auto;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+			}
+			div:nth-of-type(1){
+				background: red;
+				display: table;
+			}
+			/*display: table; 把当前的盒子转化成table标签，那么当前的盒子就具有table的属性了
+			display: table-cell; 把当前元素转成单元格 td*/
+			div:nth-of-type(1) p{
+				width: 50px;
+				height: 50px;
+				display: table-cell;	
+			}
+			div:nth-of-type(2){
+				background: orange;
+				display: inline-table;
+			}
+			div:nth-of-type(2) p{
+				background: yellow;
+				display: table-row-group;
+			}
+			div:nth-of-type(3){
+				background: blue;
+				display: run-in;
+			}
+			div:nth-of-type(3) p{
+				background: #2a579a;
+			}
+			div:nth-of-type(4){
+				background: gray;
+				display: inline-table;
+			}
+			div:nth-of-type(4) p{
+				background: #999;
+			}
+			div:nth-of-type(5){
+				background: gold;
+				display: table-row-group;
+			}
+			div:nth-of-type(5) p{
+				background: #ffff99;
+			}
+			div:nth-of-type(6){
+				background: pink;
+				display: table-header-group;
+			}
+			div:nth-of-type(6) p{
+				background: #f24a85;
+			}
+			div:nth-of-type(7){
+				background: deeppink;
+				display: table-footer-group;
+			}
+			div:nth-of-type(7) p{
+				background: #b30c47;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div>
+				<p>hello</p>
+				<p>hello2</p>
+				<p>hello3</p>
+			</div>
+			<!--说明：
+				list-item	此元素会作为列表显示。
+				run-in	此元素会根据上下文作为块级元素或内联元素显示。
+				table	此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。
+				inline-table	此元素会作为内联表格来显示（类似 <table>），表格前后没有换行符。
+				table-row-group	此元素会作为一个或多个行的分组来显示（类似 <tbody>）。
+				table-header-group	此元素会作为一个或多个行的分组来显示（类似 <thead>）。
+				table-footer-group	此元素会作为一个或多个行的分组来显示（类似 <tfoot>）。
+				table-row	此元素会作为一个表格行显示（类似 <tr>）。
+				table-column-group	此元素会作为一个或多个列的分组来显示（类似 <colgroup>）。
+				table-column	此元素会作为一个单元格列显示（类似 <col>）
+				table-cell	此元素会作为一个表格单元格显示（类似 <td> 和 <th>）
+				table-caption	此元素会作为一个表格标题显示（类似 <caption>）
+			-->
+			<div>
+				<p>hello</p>
+				<p>hello2</p>
+				<p>hello3</p>
+			</div>
+			<div>
+				<p>hello</p>
+				<p>hello2</p>
+				<p>hello3</p>
+			</div>
+			<div>
+				<p>hello</p>
+				<p>hello2</p>
+				<p>hello3</p>
+			</div>
+			<div>
+				<p>hello</p>
+				<p>hello2</p>
+				<p>hello3</p>
+			</div>
+			<div>
+				<p>hello</p>
+				<p>hello2</p>
+				<p>hello3</p>
+			</div>
+			<div>
+				<p>hello</p>
+				<p>hello2</p>
+				<p>hello3</p>
+			</div>
+			<div>
+				<p>hello</p>
+				<p>hello2</p>
+				<p>hello3</p>
+			</div>
+		</section>
+	</body>
+</html>

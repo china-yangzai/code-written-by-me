@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.wrap{
+			width: 500px;
+			height: 500px;
+			position:relative;
+		}
+		#div1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position:absolute;
+			left:0;
+			top:0;
+		}
+		#btn1{
+			margin: 200px 0 0 30px;
+		}
+	</style>
+	<body>
+		<div class="wrap">
+			<div id="div1"></div>
+		</div>
+		<button id="btn1">按钮</button>
+		<script type="text/javascript">
+		  window.onload=function () {
+          var timer=null;
+          var btn1=document.getElementById("btn1");
+          btn1.onclick=function () {
+              var div1=document.getElementById("div1");
+              clearInterval(timer);//如果多次点击，那么会有多个定时器同时工作，移动速度不是设置的10,会有叠加效果，故应该清除
+             timer= setInterval(function () {
+                if(div1.offsetLeft >= 0 && div1.offsetLeft < 300 && div1.offsetTop == 0){
+                  	div1.style.top=0;
+                  	div1.style.left=div1.offsetLeft + 60 +'px';
+                  }
+                  else if(div1.offsetLeft >= 300 && div1.offsetTop < 300){
+                  	div1.style.left=300;
+                  	div1.style.top=div1.offsetTop + 60 +'px';
+                  }else if(div1.offsetTop >= 300 && div1.offsetLeft >= 60 ){
+                  	div1.style.top=300;
+                  	div1.style.left=div1.offsetLeft - 60 +'px';
+                  }else if(div1.offsetLeft < 60 && div1.offsetTop > 0){
+                  	div1.style.left=0;
+                  	div1.style.top=div1.offsetTop - 60 +'px';
+                  }
+              },200);
+          }
+		}
+		</script>
+		
+	</body>
+</html>

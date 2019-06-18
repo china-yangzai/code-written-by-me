@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var test = {
+				foo:"test",
+				func: function () {
+					var self = this;
+					console.log(this.foo);  //test
+					console.log(self.foo);  //test
+					(function(){
+						console.log(this) // window
+						console.log(this.foo);  //undefined
+						console.log(self.foo)	//test
+					})(); 
+				}
+			}
+			test.func();
+		</script>
+	</body>
+</html>

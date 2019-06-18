@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			let result = [],
+				tempArr5 = ['1', 2, [3, 4, [5, 6]], 7];
+			let tempArr2 = ['a', 'n', 'c', 'd', ['b'],
+				['e', 'f']
+			]
+			console.log(Object.prototype.toString.call(tempArr5))
+			function unid1(arr) {
+				for(let item of arr) {
+					if(Object.prototype.toString.call(item).slice(8, -1) === 'Array') {
+						unid1(item);
+					} else {
+						result.push(item);
+					}
+				}
+				return result;
+			}
+			// console.log(unid1(tempArr5)); // ["1", 2, 3, 4, 5, 6, 7]
+			console.log(unid1(tempArr2))
+		</script>
+	</body>
+
+</html>

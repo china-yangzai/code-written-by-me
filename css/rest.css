@@ -1,0 +1,24 @@
+/*默认样式*/
+body,ul,h1,h2,h3,h4,h5,h6,p,ol,dl,dt,button,dd,input,form,select,form,input,textarea,legend,fieldset{ margin:0; padding:0; font-family:"Microsoft YaHei";outline: none;}
+fieldset{
+	border: none;
+}
+textarea{resize: none;}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {outline:none;}
+input[type="submit"], input[type="button"]{
+	background: none;
+	border: none;
+}
+li{ list-style:none}
+a:focus {  outline:none;}  
+a{ text-decoration:none;outline: none;}
+a:hover,a:focus{  text-decoration: none;}
+a:active,.active{text-decoration: none;}
+img{ border:none; display:block;}
+.clear{ zoom:1}
+.clear:after{ content:""; display:block; clear:both;}

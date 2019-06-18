@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			border: 1px solid #000;
+		}
+		.wrap{
+			width: 650px;
+			height: 240px;
+			margin: 100px auto;
+			position: relative;
+		}
+		.circle{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			margin:20px 0 0 20px;
+		}
+		.rect{
+			width: 300px;
+			height: 30px;
+			position: absolute;
+			top:50%;
+			transform: translateY(-50%);
+			right: 40px;
+		}
+	</style>
+	<body>
+		<div class="wrap">
+			<div class="circle"></div>
+			<div class="rect"></div>
+		</div>
+	</body>
+</html>

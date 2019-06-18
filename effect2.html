@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/rest.css" />
+		<style>
+			/*@keyframes move{
+				0%{
+					top:0;
+					left: 0;
+				}
+				25%{
+					top: 0px;
+					left: 150px;
+				}
+				50%{
+					top: 150px;
+					left: 150px;
+				}
+				75%{
+					top: 150px;
+					left: 0px;
+				}
+				100%{
+					top: 0px;
+					left: 0px;
+				}
+				
+			}*/
+			.wrap{
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000;
+				margin: 10px auto;
+				position: relative;
+				display: flex;
+				flex-wrap:wrap;
+			}
+			.box{
+				width: 50px;
+				height: 50px;
+				background: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+				animation: move 4s linear infinite;
+			}
+			p{
+				width:100px;
+				height: 100px;
+				text-indent: 10px;
+				line-height: 100px;
+				color:red;
+				z-index:1;
+			}
+			p:nth-child(3){
+				text-indent: 70px;
+			}
+			p:nth-child(5){
+				text-indent: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="box"></div>
+			<p>勇</p>
+			<p>闯</p>
+			<p>仨</p>
+			<p>国</p>
+		</div>
+		<button id="btn">pause</button>
+		<button id="btn2">run</button>
+		<button id="reset">reset</button>
+		<script>
+			(function(){
+            function someAnimation(offsetLeft,offsetTop){
+                oBox.style.cssText = `left:offsetLeft * 150`;
+                oBox.style.cssText = `top:offsetTop * 150`;
+            }
+            setInterval(function(){
+                for(var i=0;i<10;i++){
+                    setTimeout((function(pos,pos2){
+                        return function(){
+                            someAnimation(pos,pos2);
+                        }
+                    })(i/10),i*100)
+                 }
+            	},4000);
+        	})()
+			var oBox = document.getElementsByClassName("box")[0];
+			var oBtn = document.getElementById("btn");
+			var oRun = document.getElementById("btn2");
+			var oReset = document.getElementById("reset");
+			var aPs = document.getElementsByTagName("p");
+			oBtn.onclick = function (ev) {
+				var ev = ev || event;
+				oBox.style.animationPlayState = "paused";
+     			oBox.style.WebkitAnimationPlayState = "paused"; // 针对 Chrome 和 Safari 的代码
+			}
+			oRun.onclick = function (){
+				this.style.animationPlayState = "running";
+     			oBox.style.WebkitAnimationPlayState = "running";
+				oReset.removeAttribute('disabled')
+			}
+			oReset.onclick = function (){
+				oBox.style.animationPlayState = "paused";
+				//delCSSRule(document.styleSheets[0]);
+				oReset.setAttribute("disabled","true");
+			}
+		</script>
+	</body>
+</html>
+
